@@ -15,7 +15,7 @@ class AddProducts < ActiveRecord::Migration
                     :size => 30,
                     :is_spicy => false,
                     :is_vegan => false,
-                    :is_best_offer => false,
+                    :is_best_offer => true,
                     :path_to_image => '/images/pepperoni.jpg'
 
     Product.create  :title => 'Vegetarian',
