@@ -1,9 +1,4 @@
-function something () {
-	window.localStorage.setItem('aaa',555);
-	var x = window.localStorage.getItem('aaa');
-	alert(x);
-}
-
-function add_to_cart(){
-	alert("Hello from function");
+function add_to_cart(id){
+	var count = window.localStorage.getItem('product_'+id);
+	window.localStorage.setItem('product_'+id,count*1+1);
 }
