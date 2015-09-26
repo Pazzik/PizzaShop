@@ -22,7 +22,8 @@ post '/cart' do
   @items = params[:orders].delete!('product_').split(',')
   @items.map! do |item|
     item = item.split('=')
-    [Product.find(item[0]).title,item[1]]
+    product = Product.find(item[0])
+    [product.title,item[1],product.price]
     end
 
   erb :cart
