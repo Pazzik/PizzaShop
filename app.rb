@@ -19,5 +19,11 @@ get '/about' do
 end
 
 post '/cart' do
-  erb 'Hello'
+  @items = params[:orders].delete!('product_').split(',')
+  @items.map! do |item|
+    item = item.split('=')
+    [Product.find(item[0]).title,item[1]]
+    end
+
+  erb :cart
 end
