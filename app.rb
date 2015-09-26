@@ -28,3 +28,7 @@ post '/cart' do
 
   erb :cart
 end
+
+post 'place_order' do
+  erb "Thanks!"
+end
