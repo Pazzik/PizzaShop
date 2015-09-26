@@ -1,6 +1,7 @@
 function add_to_cart(id){
 	var count = window.localStorage.getItem('product_'+id);
 	window.localStorage.setItem('product_'+id,count*1+1);
+    update_orders_input();
 }
 function cart_get_number_of_items()
 {
@@ -15,6 +16,10 @@ function cart_get_number_of_items()
     }
 
     return cnt;
+}
+function update_orders_input(){
+    var orders = cart_get_orders();
+    $('#orders_input').val(orders);
 }
 function cart_get_orders()
 {
